@@ -3,9 +3,8 @@
 
 	<head>
 		<meta charset="utf-8">
-
-		<title>reveal.js – The HTML Presentation Framework</title>
-
+		<title>CSCQC | OEMS</title>
+		<link rel="icon" href="College-of-St.-Catherine-Quezon-City.png">
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
 
@@ -43,6 +42,15 @@
 			font-family: 'Raleway', sans-serif !important;
 			color: #fff !important;
 		}
+		.left {
+			width: 40%;
+			float: left;
+		}
+		.right {
+			width: 40%;
+			float: right;
+
+		}
 		.front-page-names {
 			position: absolute; 
 			left: -130px;
@@ -60,7 +68,7 @@
 			<div class="slides">
 				<section data-background-video="testing.mp4" data-background-color="#000000" data-background-video-loop="true" data-background-video-muted="true">
 					<h3 style="color: #fff;text-align: center;">Online Enrollment Management System for College of St. Catherine Quezon City</h3>
-					<img src="College-of-St.-Catherine-Quezon-City.png" alt="" style="border: none;background: transparent; position: relative; left: 30%" width="300" height="300">
+					<img src="College-of-St.-Catherine-Quezon-City.png" alt="" style="border: none;background: transparent; position: relative; left: 35%" width="300" height="300">
 					<div class="front-page-names">
 						<small><a href="#">ALMERA, Jasmine</a></small><br>
 						<small><a href="#">IGAYAC, Sebastian Rufo</a></small><br>
@@ -224,7 +232,7 @@
 
 				</section>
 
-				<section data-markdown>
+				<!-- <section data-markdown>
 					<script type="text/template">
 						## Markdown support
 
@@ -240,19 +248,29 @@
 						</section>
 						```
 					</script>
-				</section>
+				</section> -->
 				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+					<section id="fragments" data-background-color="#2ecc71">
+						<div class="left">
+							<h2>Scope</h2>
+							<p><i class="fa fa-arrow-alt-circle-right"></i> Admin</p>
+							<p><i class="fa fa-arrow-alt-circle-right"></i> Registrar</p>
+							<p><i class="fa fa-arrow-alt-circle-right"></i> Dean/Principal</p>
+							<p><i class="fa fa-arrow-alt-circle-right"></i> Student</p>
+							<p><i class="fa fa-arrow-alt-circle-right"></i> Accounting</p>
+						</div>
+						<div class="fragment right">
+							<h2>Limitation</h2>
+							<p><i class="fa fa-arrow-alt-circle-right"></i> Online Payment</p>
+						</div>
 
 						<aside class="notes">
 							This slide has fragments which are also stepped through in the notes window.
 						</aside>
 					</section>
-					<section>
+
+
+					<!-- <section>
 						<h2>Fragment Styles</h2>
 						<p>There's different types of fragments, like:</p>
 						<p class="fragment grow">grow</p>
@@ -267,9 +285,71 @@
 						<p class="fragment fade-in-then-out">fade-in-then-out</p>
 						<p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
 						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+					</section> -->
+				</section>
+				<section  data-background-color="#2ecc71">
+					<h2>Significance of the Study</h2>
+					<p>The system will help the school in terms of the process of the enrollment. The study could be highly significant and beneficial specifically to the following:</p>
+					<div class="left">
+						<p><i class="fa fa-arrow-alt-circle-right"></i> CSCQC</p>
+						<p><i class="fa fa-arrow-alt-circle-right"></i> Registrar</p>
+						<p><i class="fa fa-arrow-alt-circle-right"></i> Accounting</p>
+					</div>
+					<div class="right">
+						<p><i class="fa fa-arrow-alt-circle-right"></i> Dean/Principal</p>
+						<p><i class="fa fa-arrow-alt-circle-right"></i> Students</p>
+						<p><i class="fa fa-arrow-alt-circle-right"></i> Researchers</p>
+					</div>
+					<br>
+					
+				</section>
+				<section>
+					<section  data-background-color="#2ecc71">
+						<h2>Result and Performance Analysis</h2>
+						<h4>Interview</h4>
+						<p style="padding-left: 15px;">The Developers conducted interview to gather all information needed about the process of enrolling.</p>
+					</section>
+					<section  data-background-color="#2ecc71">
+						<h4>Survey</h4>
+						<p style="padding-left: 15px;">Developers conduct survey to the 10 respondents via questionnaire.</p>
+					</section>
+					<section  data-background-color="#2ecc71">
+						<h4>Result and Analysis</h4>
+						<p style="padding-left: 15px;">The following tables are the result of each question that is included in survey questionnaire. The answers will be rated 1-5. </p>
+						<p><b>1</b> - Strongly Disagree, <b>2</b> - Disagree, <b>3</b> - Neutral, <b>4</b> - Agree, <b>5</b> - Strongly Agree.</p>
 					</section>
 				</section>
 
+				<section data-background-color="#2ecc71">
+					<h2>Tabular Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Value</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Apples</td>
+								<td>$1</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>Lemonade</td>
+								<td>$2</td>
+								<td>18</td>
+							</tr>
+							<tr>
+								<td>Bread</td>
+								<td>$3</td>
+								<td>2</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+	
 				<section id="transitions">
 					<h2>Transition Styles</h2>
 					<p>
