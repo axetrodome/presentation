@@ -596,8 +596,16 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/search/search.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.0.min.js', async: true },
+					{ src: 'plugin/pubnub-remote-control.js', async: true }
+				],
+				pubnubRemoteControl: {
+					subscribeKey: 'sub-c-67f00cdc-cdcf-11e8-b5de-7a9ddb77e130',
+					publishKey: 'pub-c-bcf99045-608f-4b70-b072-50c46a450183',
+					inputChannel: 'input',			// the channel used to receive remote commands
+					outputChannel: 'output',
+				}
 			});
 
 		</script>

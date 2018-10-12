@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Remote Control Client</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <style>
+        body {
+            margin-top:20px;
+        }
+        .row {
+            margin:20px 0px;
+        }
+        #display {
+            font-size:32px;
+            vertical-align:middle;
+            padding:0px 25px;
+        }
+    </style>
+    <body>
+
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Reveal.js Remote Control Client</h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="row text-center">
+                        <button id="up" type="button" class="btn btn-default btn-lg col-xs-12 col-sm-4 col-sm-offset-4">Up</button>
+                    </div>
+
+                    <div class="row text-center">
+                        <button id="left" type="button" class="btn btn-default btn-lg col-xs-12 col-sm-4">Left</button>
+                        <span id="display" class="col-xs-12 col-sm-4">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <button id="right" type="button" class="btn btn-default btn-lg col-xs-12 col-sm-4" >Right</button>
+                    </div>
+
+                    <div class="row text-center">
+                        <button id="down" type="button" class="btn btn-default btn-lg col-xs-12 col-sm-4 col-sm-offset-4">Down</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- Optional theme -->
+
+    <!-- Latest compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.0.min.js"></script>
+        <script>
+            var pubnub = new PubNub({
+                publishKey: 'pub-c-bcf99045-608f-4b70-b072-50c46a450183',
+                subscribeKey: 'sub-c-67f00cdc-cdcf-11e8-b5de-7a9ddb77e130',
+                ssl: true
+            });
+
+            pubnub.addListener({
+                message: function(event) {
+                    var message = event.message;
+                    jQuery('#display').text(message.slide + '.' + message.part);
+                }
+            });
+
+            pubnub.subscribe({
+                channels: ['output']
+            });
+
+            function buttonCommand(button) {
+                pubnub.publish({
+                    channel : 'input',
+                    message : {button: button}
+                });
+            }
+
+            jQuery(document).ready(function() {
+                jQuery('.btn').click(function (eventObject) {
+                    var targetId = jQuery(this).attr('id');
+                    buttonCommand(targetId);
+                });
+            });
+        </script>
+    </body>
+</html>
